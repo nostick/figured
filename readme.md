@@ -31,8 +31,8 @@ $ docker-compose run --rm blog-server php artisan migrate --seed
 
 This will create a new user that you can use to sign in :
 ```yml
-email: darthvader@deathstar.ds
-password: 4nak1n
+email: csulbaran@test.com
+password: 123456
 ```
 
 And then, compile the assets :
@@ -55,31 +55,3 @@ In development environnement, rebuild the database :
 ```bash
 $ docker-compose run --rm blog-server php artisan migrate:fresh --seed
 ```
-
-## Accessing the API
-
-Clients can access to the REST API. API requests require authentication via token. You can create a new token in your user profile.
-
-Then, you can use this token either as url parameter or in Authorization header :
-
-```bash
-# Url parameter
-GET http://laravel-blog.app/api/v1/posts?api_token=your_private_token_here
-
-# Authorization Header
-curl --header "Authorization: Bearer your_private_token_here" http://laravel-blog.app/api/v1/posts
-```
-
-API are prefixed by ```api``` and the API version number like so ```v1```.
-
-Do not forget to set the ```X-Requested-With``` header to ```XMLHttpRequest```. Otherwise, Laravel won't recognize the call as an AJAX request.
-
-To list all the available routes for API :
-
-```bash
-$ docker-compose run --rm --no-deps blog-server php artisan route:list --path=api
-```
-
-## License
-
-This project is released under the [MIT](http://opensource.org/licenses/MIT) license.

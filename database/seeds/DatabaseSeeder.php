@@ -41,9 +41,7 @@ class DatabaseSeeder extends Seeder
                 'posted_at' => now(),
                 'content' => "
                     Welcome to Laravel-blog !<br><br>
-                    Don't forget to read the README before starting.<br><br>
-                    Feel free to add a star on Laravel-blog on Github !<br><br>
-                    You can open an issue or (better) a PR if something went wrong."
+                    Don't forget to read the README before starting.<br><br>"
             ]
         );
 
