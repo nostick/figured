@@ -55,3 +55,7 @@ In development environnement, rebuild the database :
 ```bash
 $ docker-compose run --rm blog-server php artisan migrate:fresh --seed
 ```
+
+## Notes
+1.) If you have troubles with storage remember to give right access to storage folder
+2.) If you got an error with mysql databases, just give it a second to wait until or a retry, it should works
